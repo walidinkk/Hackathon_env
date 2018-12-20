@@ -1,11 +1,30 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Alert, Text, TextInput, Button, View } from 'react-native';
 
 export default class Home extends React.Component {
+
+  state = {
+    searchItem: ''
+  }
+
+  handleChange(searchItem){
+    this.setState({searchItem})
+  }
+
+  handleSubmit(){
+    Alert.alert('Yay !');
+  }
+
   render() {
     return (
       <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
+        <Text>Modèle du produit</Text>
+        <TextInput
+        placeholder="Veuillez entrer la référence du produit"
+        onChangeText={(searchItem) => this.handleChange(searchItem)}
+        value={this.state.searchItem}
+        />
+        <Button onPress={this.handleSubmit} title="OK" />
       </View>
     );
   }
