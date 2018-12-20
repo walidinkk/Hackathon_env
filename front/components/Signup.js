@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Alert, Text, TextInput, Button, View } from 'react-native';
 
-export default class Home extends React.Component {
+export default class Signup extends React.Component {
 
   state = {
     searchItem: ''
@@ -18,13 +18,12 @@ export default class Home extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Modèle du produit</Text>
         <TextInput
-        placeholder="Veuillez entrer la référence du produit"
-        onChangeText={(searchItem) => this.handleChange(searchItem)}
-        value={this.state.searchItem}
+        placeholder="Nom"
+        // onChangeText={(searchItem) => this.handleChange(searchItem)}
+        // value={this.state.searchItem}
         />
-        <Button onPress={this.handleSubmit} title="OK" />
+        <Button onPress={this.handleSubmit} title="VALIDER" />
       </View>
     );
   }
