@@ -1,30 +1,24 @@
-import React from 'react';
-import { StyleSheet, Alert, Text, TextInput, Button, View } from 'react-native';
+import React from "react";
+import { StyleSheet, Alert, Text, TextInput, Button, View } from "react-native";
+import Search from "./Search.js";
 
-export default class Home extends React.Component {
-
+export default class Signup extends React.Component {
   state = {
-    searchItem: ''
+    searchItem: ""
+  };
+
+  handleChange(searchItem) {
+    this.setState({ searchItem });
   }
 
-  handleChange(searchItem){
-    this.setState({searchItem})
-  }
-
-  handleSubmit(){
-    Alert.alert('Yay !');
+  handleSubmit() {
+    Alert.alert("Yay !");
   }
 
   render() {
     return (
       <View style={styles.container}>
-        <Text>Modèle du produit</Text>
-        <TextInput
-        placeholder="Veuillez entrer la référence du produit"
-        onChangeText={(searchItem) => this.handleChange(searchItem)}
-        value={this.state.searchItem}
-        />
-        <Button onPress={this.handleSubmit} title="OK" />
+        <Search />
       </View>
     );
   }
@@ -33,8 +27,8 @@ export default class Home extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center"
+  }
 });
