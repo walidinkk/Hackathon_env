@@ -2,13 +2,31 @@ import React from "react";
 import { StyleSheet, Alert, Text, TextInput, View, Image } from "react-native";
 import Button from "apsl-react-native-button";
 import { Navigation } from "react-native-navigation";
-
+import LoginConnect2 from "./LoginConnect2"
+import Signup from "./Signup"
 export default class Login extends React.Component {
-  handleSubmit() {
-    Alert.alert("Yay !");
+
+state = {
+  redirect2 : false,
+  sign: false
+}
+
+  handlePressLoginConnect2 = () => {
+    this.setState({ redirect2 : true })
+  }
+
+  handlePressLoginSignup = () => {
+    this.setState({ sign : true })
   }
 
   render() {
+  if(this.state.redirect2 === true){
+    return <LoginConnect2 />
+  }
+  if(this.state.sign === true){
+    return <Signup />
+  }
+
     return (
       <View style={styles.container}>
         <Image
@@ -17,28 +35,34 @@ export default class Login extends React.Component {
         />
         <View style={styles.containerButton}>
           <Button
-            onPress={this.handleSubmit}
+            
             style={styles.button}
             title="Connect to Facebook"
           >
             <Text style={styles.text}>Connect to Facebook</Text>
           </Button>
           <Button
-            onPress={this.handleSubmit}
+            
             style={styles.button}
             title="Connect to Gmail"
           >
             <Text style={styles.text}>Connect to Gmail</Text>
           </Button>
           <Button
-            onPress={this.handleSubmit}
+            onPress={() => {
+                // this.props.navigation.navigate('LoginConnect2')
+                this.handlePressLoginConnect2()
+              }
+          }
             style={styles.button}
             title="Connexion"
           >
             <Text style={styles.text}>Connexion</Text>
           </Button>
           <Button
-            onPress={this.handleSubmit}
+            onPress={() => {
+                          this.handlePressLoginSignup()
+          }}
             style={styles.button}
             title="Inscription"
           >

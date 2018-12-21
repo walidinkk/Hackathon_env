@@ -2,13 +2,17 @@ import React from 'react';
 import { StyleSheet, Alert, Text, TextInput, View, } from 'react-native';
 import Button from 'apsl-react-native-button';
 import Logo from './Logo';
+import Home from './Home';
 
 export default class Login extends React.Component {
 
   state = {
-    searchItem: ''
+    searchItem: '',
+    home: false
   }
-
+  handlePressHome = () => {
+      this.setState({ home : true })
+    }
   handleChange(searchItem) {
     this.setState({ searchItem })
   }
@@ -18,6 +22,9 @@ export default class Login extends React.Component {
   }
 
   render() {
+    if(this.state.home === true){
+      return <Home />
+    }
     return (
 
       <View style={styles.container} >
@@ -38,11 +45,11 @@ export default class Login extends React.Component {
         />
 
         <Button
-          onPress={this.handleSubmit}
+          onPress={this.handlePressHome}
           style={styles.button}
           title="Inscription"
         >
-          <Text style={styles.text}>Inscription</Text>
+          <Text style={styles.text}>Valider</Text>
         </Button>
 
       </View>
