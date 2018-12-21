@@ -44,17 +44,14 @@ export default class Search extends React.Component {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: "#fff",
-    flex: 1,
     flexDirection: "row",
-    alignSelf: "flex-end",
-    alignItems: "flex-start",
-    marginTop: 75,
-    marginRight: 20
+    alignSelf: "center",
+    marginBottom: 30,
   },
   input: {
     justifyContent: "center",
     borderBottomWidth: 1,
-    borderColor: "#9B9B9B",
+    borderColor: "#33C25C",
     padding: 10,
     height: 40
   },
