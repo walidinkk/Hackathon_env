@@ -1,6 +1,11 @@
 import React from "react";
 import { StyleSheet, Alert, Text, TextInput, Button, View } from "react-native";
 import Search from "./Search.js";
+import DayScoring from "./DayScoring.js";
+import ProductsGallery from "./ProductsGallery.js";
+import Logo from "./Logo.js";
+import Charts from "./Charts.js";
+import Menu from "./Menu.js";
 
 export default class Signup extends React.Component {
   state = {
@@ -18,7 +23,12 @@ export default class Signup extends React.Component {
   render() {
     return (
       <View style={styles.container}>
+        <Logo />
         <Search />
+        <ProductsGallery />
+        <DayScoring />
+        <Charts />
+        <Menu />
       </View>
     );
   }
@@ -29,6 +39,5 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
     alignItems: "center",
-    justifyContent: "center"
   }
 });
