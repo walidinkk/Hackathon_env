@@ -43,8 +43,10 @@ export default class Signup extends React.Component {
           <TextInput
           style={styles.text}
           placeholder="Mot de passe"
-          type='password'
+          underlineColorAndroid="transparent"
+          secureTextEntry={true}
           />
+            
           <Button style={{borderColor: 'black', position :'absolute', top: 500, left: 130,width: 100}} onPress={this.handleSubmit} title="VALIDER" >VALIDER</Button>
           
         </View>
