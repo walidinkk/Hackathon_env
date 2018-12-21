@@ -1,5 +1,6 @@
 import React from 'react';
-import { StyleSheet, Alert, Text, TextInput, Button, View } from 'react-native';
+import { StyleSheet, Alert, Text, TextInput, View, } from 'react-native';
+import Button from 'apsl-react-native-button';
 
 export default class Signup extends React.Component {
 
@@ -17,14 +18,39 @@ export default class Signup extends React.Component {
 
   render() {
     return (
-      <View style={styles.container}>
-        <TextInput
-        placeholder="Nom"
-        // onChangeText={(searchItem) => this.handleChange(searchItem)}
-        // value={this.state.searchItem}
-        />
-        <Button onPress={this.handleSubmit} title="VALIDER" />
-      </View>
+
+        <View style={styles.container} >
+          <Text h1 style={styles.title}>Inscription</Text>
+          <TextInput 
+          style={styles.text}
+          placeholder="Prénom"
+          
+          />
+
+          <TextInput
+          style={styles.text}
+          placeholder="Nom"
+          
+          // onChangeText={(searchItem) => this.handleChange(searchItem)}
+          // value={this.state.searchItem}
+          />
+
+          <TextInput
+          style={styles.text}
+          placeholder="mail"
+          />
+
+          <TextInput
+          style={styles.text}
+          placeholder="Mot de passe"
+          underlineColorAndroid="transparent"
+          secureTextEntry={true}
+          />
+            
+          <Button style={{borderColor: 'black', position :'absolute', top: 500, left: 130,width: 100}} onPress={this.handleSubmit} title="VALIDER" >VALIDER</Button>
+          
+        </View>
+  
     );
   }
 }
@@ -34,6 +60,22 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
+    paddingTop: '20%',
   },
+  title:{
+    fontSize: 20,
+    fontWeight: 'bold',
+    paddingBottom: '20%',
+    paddingTop: '10%',
+    
+  },
+  text:{
+    marginTop: '10%',
+    borderBottomWidth: 0.5
+  },
+  validation:{
+    paddingTop: '300%',
+  }
+  
 });
