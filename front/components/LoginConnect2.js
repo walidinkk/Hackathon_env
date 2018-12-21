@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Alert, Text, TextInput, View, } from 'react-native';
 import Button from 'apsl-react-native-button';
+import Logo from './Logo';
 
 export default class Login extends React.Component {
 
@@ -8,37 +9,44 @@ export default class Login extends React.Component {
     searchItem: ''
   }
 
-  handleChange(searchItem){
-    this.setState({searchItem})
+  handleChange(searchItem) {
+    this.setState({ searchItem })
   }
 
-  handleSubmit(){
+  handleSubmit() {
     Alert.alert('Yay !');
   }
 
   render() {
     return (
 
-        <View style={styles.container} >
-            <Text h1 style={styles.title}>Me connecter</Text>
-            <TextInput
-            style={styles.text}
-            placeholder="mail"
-            // onChangeText={(searchItem) => this.handleChange(searchItem)}
-            // value={this.state.searchItem}
-            />
+      <View style={styles.container} >
+        <Logo/>
+        <Text h1 style={styles.title}>Me connecter</Text>
+        <TextInput
+          style={styles.input}
+          placeholder="mail"
+        // onChangeText={(searchItem) => this.handleChange(searchItem)}
+        // value={this.state.searchItem}
+        />
 
-            <TextInput
-            style={styles.text}
-            placeholder="Mot de passe"
-            underlineColorAndroid="transparent"
-            secureTextEntry={true}
-            />
-            
-            <Button style={{borderColor: 'black', position :'absolute', top: 400, left: 110,width: 150}} onPress={this.handleSubmit} title="CONNEXION" >CONNEXION</Button>
-          
-        </View>
-  
+        <TextInput
+          style={styles.input}
+          placeholder="Mot de passe"
+          underlineColorAndroid="transparent"
+          secureTextEntry={true}
+        />
+
+        <Button
+          onPress={this.handleSubmit}
+          style={styles.button}
+          title="Inscription"
+        >
+          <Text style={styles.text}>Inscription</Text>
+        </Button>
+
+      </View>
+
     );
   }
 }
@@ -51,17 +59,29 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     paddingTop: '20%',
   },
-  title:{
+  title: {
     fontSize: 20,
     fontWeight: 'bold',
     paddingBottom: '20%',
     paddingTop: '10%',
-    
+    color: "#33C25C"
   },
-  text:{
+  button: {
+    alignSelf: "center",
+    width: 230,
+    borderWidth: 1,
+    borderColor: "#33C25C",
+    margin: 15,
+    marginTop: 50,
+  },
+  text: {
+    color: "#33C25C"
+  },
+  input: {
     marginTop: '1%',
     paddingTop: '5%',
-    borderBottomWidth: 0.5
+    borderBottomWidth: 1,
+    borderColor: "#33C25C"
   },
-  
+
 });

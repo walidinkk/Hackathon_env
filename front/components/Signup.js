@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Alert, Text, TextInput, View, } from 'react-native';
 import Button from 'apsl-react-native-button';
+import Logo from './Logo';
 
 export default class Signup extends React.Component {
 
@@ -20,15 +21,16 @@ export default class Signup extends React.Component {
     return (
 
         <View style={styles.container} >
+        <Logo />
           <Text h1 style={styles.title}>Inscription</Text>
           <TextInput 
-          style={styles.text}
+          style={styles.input}
           placeholder="Prénom"
           
           />
 
           <TextInput
-          style={styles.text}
+          style={styles.input}
           placeholder="Nom"
           
           // onChangeText={(searchItem) => this.handleChange(searchItem)}
@@ -36,19 +38,24 @@ export default class Signup extends React.Component {
           />
 
           <TextInput
-          style={styles.text}
+          style={styles.input}
           placeholder="mail"
           />
 
           <TextInput
-          style={styles.text}
+          style={styles.input}
           placeholder="Mot de passe"
           underlineColorAndroid="transparent"
           secureTextEntry={true}
           />
             
-          <Button style={{borderColor: 'black', position :'absolute', top: 500, left: 130,width: 100}} onPress={this.handleSubmit} title="VALIDER" >VALIDER</Button>
-          
+          <Button
+          onPress={this.handleSubmit}
+          style={styles.button}
+          title="Inscription"
+          >
+          <Text style={styles.text}>Valider</Text>
+        </Button>
         </View>
   
     );
@@ -68,14 +75,28 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     paddingBottom: '20%',
     paddingTop: '10%',
-    
+    color: "#33C25C",
   },
   text:{
-    marginTop: '10%',
-    borderBottomWidth: 0.5
+    color: "#33C25C"
   },
   validation:{
     paddingTop: '300%',
-  }
+    
+  },
+  button: {
+    alignSelf: "center",
+    width: 230,
+    borderWidth: 1,
+    borderColor: "#33C25C",
+    margin: 15,
+    marginTop: 50,
+  },
+  input: {
+    marginTop: '1%',
+    paddingTop: '5%',
+    borderBottomWidth: 1,
+    borderColor: "#33C25C"
+  },
   
 });
