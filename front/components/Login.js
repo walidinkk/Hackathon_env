@@ -33,16 +33,16 @@ export default class Login extends React.Component {
           <Button
             onPress={this.handleSubmit}
             style={styles.button}
-            title="Inscription"
+            title="Connexion"
           >
-            <Text style={styles.text}>Inscription</Text>
+            <Text style={styles.text}>Connexion</Text>
           </Button>
           <Button
             onPress={this.handleSubmit}
             style={styles.button}
-            title="Connecxion"
+            title="Inscription"
           >
-            <Text style={styles.text}>Connecxion</Text>
+            <Text style={styles.text}>Inscription</Text>
           </Button>
         </View>
       </View>
@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
     justifyContent: "flex-end"
   },
   containerButton: {
-    marginBottom: 50,
+    marginBottom: 50
   },
   button: {
     alignSelf: "center",
